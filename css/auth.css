@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+:root {
+	--header-height: ;
+	/*========== Colors ==========*/
+	--hue-color: 219; 
+	--first-color: hsl(var(--hue-color), 80%, 19%);
+	--second-color: hsl(var(--hue-color), 0%, 100%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--first-color);
+}
+
+main {
+  display: flex;
+  margin: 0 220px;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.hero-img {
+  height: 100%;
+  width: 25rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 3rem;
+  background-color: var(--second-color);
+}
+
+.login-form label {
+  font-size: 0.8em;
+}
+
+.login-form input {
+  font-size: 0.9em;
+}
+
+.login-form .logo-image {
+  width: 80px;
+  margin-top: 3rem;
+}
+
+.login-form h1 {
+  font-size: 1.3em;
+  margin: 1rem;
+}
+
+.login-form input {
+  display: block;
+  width: 300px;
+  background: #e8f0fe;
+  padding: 0.5rem;
+  border: 0.3px solid rgba(69, 95, 129, 0.561);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+input[type="submit"] {
+  background-color: var(--first-color);
+  color: #fff;
+  font-weight: 700;
+}
+
+.cta {
+  font-size: 0.9em;
+}
+.cta span a {
+  text-decoration: none;
+}
+
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  margin: 0.3rem;
+  border: 0.3px solid rgba(69, 95, 129, 0.561);
+  padding: 0.3rem 1rem;
+  display: flex;
+  align-items: center;
+  border-radius: 9px;
+}
+
+.icon img {
+  height: 24px;
+}
+
+.icon p {
+  margin-left: 0.4rem;
+  font-size: 0.75em;
+}
