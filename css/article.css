@@ -1,0 +1,72 @@
+/** @format */
+
+:root {
+	--header-height: ;
+	/*========== Colors ==========*/
+	--hue-color: 219;
+	--first-color: hsl(var(--hue-color), 80%, 19%);
+}
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.container-blog {
+	width: 90%;
+	margin: 0 auto;
+}
+.title {
+	text-align: left;
+	margin-top: 90px;
+    margin-bottom: 20px;
+}
+title h2 {
+	color: var(--first-color);
+	text-transform: uppercase;
+}
+.column-card {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+    margin-bottom: 40px;
+}
+.card {
+	width: 32%;
+    box-shadow: 0px 0px 18px -8px rgba(118, 130, 183, 1);
+    margin-bottom: 20px;
+}
+.card img {
+	width: 100%;
+}
+.panel {
+	padding: 9px;
+	border-radius: 2px;
+}
+span.date {
+	color: var(--first-color);
+	font-weight: 700;
+}
+.card a {
+	text-decoration: none;
+	color: var(--first-color);
+}
+.breaker{
+    display: inline-block;
+    height: 5px;
+    background-color: var(--first-color);
+    width: 70px;
+    position: relative;
+    border-radius: 4px;
+}
+@media screen and (max-width:786px) {
+    .card{
+        width: 49%;
+        margin-bottom: 30px;
+    }
+}
+@media screen and (max-width:430px) {
+    .card{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
