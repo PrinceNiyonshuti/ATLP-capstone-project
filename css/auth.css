@@ -76,11 +76,15 @@ input[type="submit"] {
 
 .cta {
   font-size: 0.9em;
+  color: var(--first-color);
 }
 .cta span a {
   text-decoration: none;
 }
 
+.forgot{
+  margin-bottom: 1rem;
+}
 
 .buttons {
   display: flex;
