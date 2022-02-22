@@ -1,21 +1,94 @@
-/** @format */
+/**
+ * /*
+ *
+ * @format
+ * @role register user
+ */
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-var firebaseConfig = {
-	apiKey: "AIzaSyBL5Xy1zXDB3UocYb955Wy3XS75AEp6dvM",
-	authDomain: "atlp-7-capstone-project.firebaseapp.com",
-	projectId: "atlp-7-capstone-project",
-	storageBucket: "atlp-7-capstone-project.appspot.com",
-	messagingSenderId: "990979498717",
-	appId: "1:990979498717:web:e1b2f4ded60f6f64ca3134",
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+function addUser() {
+	const email = document.getElementById("email").value;
+	const password = document.getElementById("password").value;
+	const username = document.getElementById("username").value;
+	auth
+		.createUserWithEmailAndPassword(email, password)
+		.then((userCredential) => {
+			const user = userCredential.user;
+			localStorage.setItem("user", JSON.stringify(user));
+			saveUserProfile({ username, email });
+		})
+		.catch((error) => {
+			const errorCode = error.code;
+			const errorMessage = error.message;
+			swal({
+				title: "Invalid Credentials",
+				text: errorMessage,
+				icon: "error",
+				timer: 2000,
+			});
+		});
+}
+/*
+ @role register user
+*/
+function loginUser() {
+	const email = document.getElementById("email").value;
+	const password = document.getElementById("password").value;
+	auth
+		.signInWithEmailAndPassword(email, password)
+		.then((userCredential) => {
+			const user = userCredential.user;
+			swal({
+				title: "Logged In",
+				icon: "success",
+				timer: 2000,
+				showConfirmButton: false,
+			}).then(() => {
+				localStorage.setItem("user", JSON.stringify(user));
+				window.location.href = "../dashboard.html";
+			});
+		})
+		.catch((error) => {
+			const errorCode = error.code;
+			const errorMessage = error?.message;
+			swal({
+				title: "Invalid Credentials",
+				text: ``,
+				icon: "error",
+				timer: 2000,
+			});
+		});
+}
 
-//make aut and firestore references
-// enable firebase auth service
-const auth = firebase.auth();
-// enable firebase firestore service
-const db = firebase.firestore();
-//   db.settings({timeStampInShots: true});
+/*
+ @role save user profile
+*/
+function saveUserProfile({ username, email }) {
+	db.collection("users")
+		.doc()
+		.set({
+			username,
+			email,
+			created_at: new Date(),
+		})
+		.then(() => {
+			swal({
+				title: "Account Created",
+				icon: "success",
+				timer: 2000,
+			}).then(() => {
+				window.location.href = "../dashboard.html";
+			});
+		})
+		.catch((error) => {
+			swal({
+				title: "Error",
+				text: ``,
+				icon: "error",
+				timer: 2000,
+			});
+		});
+}
+
+/*
+ @role get profile
+*/
