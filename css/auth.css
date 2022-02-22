@@ -109,3 +109,8 @@ input[type="submit"] {
   margin-left: 0.4rem;
   font-size: 0.75em;
 }
+@media screen and (max-width: 425px) {
+  .hero-img{
+    display: none;
+  }
+}
