@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,18 +10,12 @@
 		<title>Prince Niyonshuti -Portifolio</title>
 		<link rel="apple-touch-icon " href="images/prof.png " />
 		<link rel="shortcut icon " href="images/prof.png " />
-		<meta
-			name="description"
-			content="Prince Niyonshuti , a fullstack developer"
-		/>
-		<link
-			href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
-			rel="stylesheet"
-		/>
+		<meta name="description" content="Prince Niyonshuti , a fullstack developer" />
+		<link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="css/dashboard.css" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<style>
-			
+
 		</style>
 	</head>
 
@@ -62,9 +57,9 @@
 					</a>
 				</li>
 				<li class="log_out">
-					<a href="/login.html">
+					<a href="">
 						<i class="bx bx-log-out"></i>
-						<span class="links_name">Log out</span>
+						<span class="links_name" onclick="logOut()">Log out</span>
 					</a>
 				</li>
 			</ul>
@@ -81,7 +76,7 @@
 				</div>
 				<div class="profile-details">
 					<img src="images/prof.png" alt="" />
-					<span class="admin_name">Prince Np</span>
+					<span id="admin_name" class="admin_name">Prince Np</span>
 					<i class="bx bx-chevron-down"></i>
 				</div>
 			</nav>
@@ -190,5 +185,7 @@
 				</div>
 			</div>
 		</section>
+		<script src="js/dashboard.js"></script>
 	</body>
+
 </html>

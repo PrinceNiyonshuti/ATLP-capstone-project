@@ -39,6 +39,7 @@ main {
   align-items: center;
   padding: 1rem 3rem;
   background-color: var(--second-color);
+  display: block;
 }
 
 .login-form label {
