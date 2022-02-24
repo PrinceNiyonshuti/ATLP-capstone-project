@@ -593,7 +593,7 @@ img {
 .contact_input {
 	width: 100%;
 	background-color: var(--input-color);
-	color: var(--text-color);
+	color: white;
 	font-family: var(--body-font);
 	font-size: var(--normal-font-size);
 	border: none;
@@ -603,7 +603,7 @@ img {
 textarea {
 	width: 100%;
 	background-color: var(--input-color);
-	color: var(--text-color);
+	color: white;
 	font-family: var(--body-font);
 	font-size: var(--normal-font-size);
 	border: none;
@@ -731,8 +731,8 @@ textarea {
 
 @media screen and (min-width: 768px) {
 	.container {
-		/* margin-left: auto;
-		margin-right: auto; */
+		margin-left: auto;
+		margin-right: auto;
 	}
 	body {
 		margin: 0;
@@ -788,7 +788,7 @@ textarea {
 		/* grid-template-columns: 5fr; */
 	}
 	.service_container {
-		/* grid-template-columns: repeat(3, 300px); */
+		grid-template-columns: repeat(3, 300px);
 	}
 	.services_icon {
 		font-size: 2.5rem;

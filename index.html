@@ -755,30 +755,27 @@
 						</div>
 					</div>
 
-					<form action="#" class="contact_form grid">
+					<form  onsubmit="return false;" class="contact_form grid">
 						<div class="contact_inputs grid">
 							<div class="contact_content">
 								<label for="name" class="contact_label">name</label>
-								<input type="text" class="contact_input" />
+								<input type="text" id="name" class="contact_input" />
 							</div>
 							<div class="contact_content">
 								<label for="Email" class="contact_label">Email</label>
-								<input type="email" class="contact_input" />
+								<input type="email" id="email" class="contact_input" />
 							</div>
 						</div>
 						<div class="contact_content">
-							<label for="Project" class="contact_label">Project</label>
-							<input type="text" class="contact_input" />
+							<label for="Project" class="contact_label">Subject</label>
+							<input type="text" id="subject" class="contact_input" />
 						</div>
 						<div class="contact_content">
 							<label for="Message" class="contact_label">Message</label>
-							<textarea name="" id="" cols="0" rows="10" class="class_input"></textarea>
+							<textarea  id="content" cols="0" rows="10" class="class_input"></textarea>
 						</div>
 						<div>
-							<a href="#" class="button button--flex">
-								Send Message
-								<i class="uil uil-message button_icon"></i>
-							</a>
+							<input type="submit" value="Send Message" onclick="sendQuery()" class="button button--flex">
 						</div>
 					</form>
 				</div>
@@ -817,7 +814,14 @@
 				</div>
 			</footer>
 		</main>
+
 		<script src="js/main.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<script src="js/firebase.js"></script>
+		<script src="js/auth.js"></script>
 	</body>
 
 </html>
