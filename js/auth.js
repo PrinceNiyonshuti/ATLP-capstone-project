@@ -37,15 +37,30 @@ function loginUser() {
 		.signInWithEmailAndPassword(email, password)
 		.then((userCredential) => {
 			const user = userCredential.user;
-			swal({
-				title: "Logged In",
-				icon: "success",
-				timer: 2000,
-				showConfirmButton: false,
-			}).then(() => {
-				localStorage.setItem("user", JSON.stringify(user));
-				window.location.href = "../dashboard.html";
-			});
+			console.log(user.email);
+			const subscriber = user.email;
+			const admin = "npprince47@gmail.com";
+			if (subscriber == admin) {
+				swal({
+					title: "Logged In Admin",
+					icon: "success",
+					timer: 2000,
+				}).then(() => {
+					localStorage.setItem("user", JSON.stringify(user));
+					window.location.href = "../dashboard.html";
+				});
+				console.log("admin");
+			} else {
+				swal({
+					title: "Logged In",
+					icon: "success",
+					timer: 2000,
+				}).then(() => {
+					localStorage.setItem("user", JSON.stringify(user));
+					window.location.href = "../userDashboard.html";
+				});
+				console.log("user");
+			}
 		})
 		.catch((error) => {
 			const errorCode = error.code;
@@ -90,5 +105,24 @@ function saveUserProfile({ username, email }) {
 }
 
 /*
- @role get profile
+ @role check if already logged in
 */
+
+function getProfile() {
+	let user = localStorage.getItem("user");
+	if (user) {
+		user = JSON.parse(user);
+		const subscriber = user.email;
+		const admin = "npprince47@gmail.com";
+		if (subscriber == admin) {
+			localStorage.setItem("user", JSON.stringify(user));
+			window.location.href = "../dashboard.html";
+		} else if (subscriber != admin) {
+			localStorage.setItem("user", JSON.stringify(user));
+			window.location.href = "../userDashboard.html";
+		} else {
+			window.location.href = "../login.html";
+		}
+	} 
+}
+getProfile();
