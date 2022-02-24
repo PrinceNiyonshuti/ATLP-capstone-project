@@ -123,6 +123,40 @@ function getProfile() {
 		} else {
 			window.location.href = "../login.html";
 		}
-	} 
+	}
 }
 getProfile();
+
+/*
+ @role send query 
+*/
+function sendQuery() {
+	const name = document.getElementById("name").value;
+	const email = document.getElementById("email").value;
+	const subject = document.getElementById("subject").value;
+	const content = document.getElementById("content").value;
+	db.collection("queries")
+		.doc()
+		.set({
+			name,
+			email,
+			subject,
+			content,
+			created_at: new Date(),
+		})
+		.then(() => {
+			swal({
+				title: "Query sent successfully",
+				icon: "success",
+				timer: 2000,
+			});
+		})
+		.catch((error) => {
+			swal({
+				title: "Error",
+				text: `Something went wrong`,
+				icon: "error",
+				timer: 2000,
+			});
+		});
+}
