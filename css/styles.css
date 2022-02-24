@@ -4,7 +4,7 @@
 :root {
 	--header-height: ;
 	/*========== Colors ==========*/
-	--hue-color: 219; 
+	--hue-color: 219;
 	--first-color: hsl(var(--hue-color), 80%, 19%);
 	--first-color-second: hsl(var(--hue-color), 80%, 19%);
 	--first-color-alt: hsl(var(--hue-color), 57%, 53%);
@@ -679,7 +679,7 @@ textarea {
 	.about_img {
 		width: 100%;
 	}
-    .skills_title {
+	.skills_title {
 		font-size: var(--normal-font-size);
 	}
 	.qualification_data {
@@ -715,7 +715,7 @@ textarea {
 	.about_img {
 		width: 100%;
 	}
-    .skills_container,
+	.skills_container,
 	.portifolio_content,
 	.project_container,
 	.contact_container,
@@ -727,13 +727,12 @@ textarea {
 		grid-template-columns: 0.6fr;
 		justify-content: center;
 	}
-	
 }
 
 @media screen and (min-width: 768px) {
 	.container {
-		margin-left: auto;
-		margin-right: auto;
+		/* margin-left: auto;
+		margin-right: auto; */
 	}
 	body {
 		margin: 0;
@@ -786,10 +785,10 @@ textarea {
 		justify-content: center;
 	}
 	.qualification_sections {
-		grid-template-columns: 5fr;
+		/* grid-template-columns: 5fr; */
 	}
 	.service_container {
-		grid-template-columns: repeat(3, 300px);
+		/* grid-template-columns: repeat(3, 300px); */
 	}
 	.services_icon {
 		font-size: 2.5rem;

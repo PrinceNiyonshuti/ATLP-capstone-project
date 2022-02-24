@@ -133,6 +133,21 @@ input[type="submit"] {
 	color: #fff;
 	font-weight: 700;
 }
+@media screen and (min-width: 768px) {
+	.article-comment {
+		margin-left: 3rem;
+	}
+	.form-row {
+		display: block;
+	}
+	.form-col:nth-child(2) {
+		margin-left: 0;
+	}
+	.comment-form input,
+	textarea {
+		margin-top: 0;
+	}
+}
 @media screen and (max-width: 425px) {
 	.title-container {
 		margin-top: 0;
