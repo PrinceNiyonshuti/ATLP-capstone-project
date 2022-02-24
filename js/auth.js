@@ -47,7 +47,7 @@ function loginUser() {
 					timer: 2000,
 				}).then(() => {
 					localStorage.setItem("user", JSON.stringify(user));
-					window.location.href = "../dashboard.html";
+					window.location.href = "../admin/dashboard.html";
 				});
 				console.log("admin");
 			} else {
@@ -57,7 +57,7 @@ function loginUser() {
 					timer: 2000,
 				}).then(() => {
 					localStorage.setItem("user", JSON.stringify(user));
-					window.location.href = "../userDashboard.html";
+					window.location.href = "../user/userDashboard.html";
 				});
 				console.log("user");
 			}
@@ -91,7 +91,7 @@ function saveUserProfile({ username, email }) {
 				icon: "success",
 				timer: 2000,
 			}).then(() => {
-				window.location.href = "../dashboard.html";
+				window.location.href = "../user/userDashboard.html";
 			});
 		})
 		.catch((error) => {
@@ -103,29 +103,6 @@ function saveUserProfile({ username, email }) {
 			});
 		});
 }
-
-/*
- @role check if already logged in
-*/
-
-function getProfile() {
-	let user = localStorage.getItem("user");
-	if (user) {
-		user = JSON.parse(user);
-		const subscriber = user.email;
-		const admin = "npprince47@gmail.com";
-		if (subscriber == admin) {
-			localStorage.setItem("user", JSON.stringify(user));
-			window.location.href = "../dashboard.html";
-		} else if (subscriber != admin) {
-			localStorage.setItem("user", JSON.stringify(user));
-			window.location.href = "../userDashboard.html";
-		} else {
-			window.location.href = "../login.html";
-		}
-	}
-}
-getProfile();
 
 /*
  @role send query 
