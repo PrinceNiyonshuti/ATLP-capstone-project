@@ -81,10 +81,34 @@ db.collection("articles")
 				doc.data().title +
 				"</td><td>" +
 				doc.data().slug +
-				"</td><td><div class='button' style='justify-content: center;'><a href='#' style='background-color:#1400e3;'>Edit</a>&nbsp;<button style='background-color:#f10606' id='DelArticle'>Delete</button></div></td></tr>";
+				"</td><td><div class='button' style='justify-content: center;'><a href='#' style='background-color:#1400e3;'>Edit</a>&nbsp;<a style='background-color:#f10606' id='DelArticle'>Delete</a></div></td></tr>";
 
-			document.getElementById("result").innerHTML += html;
-			
+			document.getElementById("articles-data").innerHTML += html;
 		});
 	});
 
+// get users collection
+db.collection("users")
+	.get()
+	.then((snapshot) => {
+		var counter = 0;
+		snapshot.docs.forEach((doc) => {
+			counter += 1;
+			let day = doc.data().created_at;
+			const joined = day.toDate().toDateString();
+			html =
+				"<tr  style='height:50px !important' data-id=" +
+				doc.id +
+				"><td>" +
+				counter +
+				"</td><td>" +
+				doc.data().username +
+				"</td><td>" +
+				doc.data().email +
+				"</td><td>" +
+				joined +
+				"</td><td><div class='button'><a href='#' style='background-color:#1400e3'>Block</a>&nbsp;<a href='#' style='background-color:#f10606'>Delete</a></div></td></tr>";
+
+			document.getElementById("users-data").innerHTML += html;
+		});
+	});
