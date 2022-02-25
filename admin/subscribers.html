@@ -1,0 +1,171 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Prince Niyonshuti -Portifolio</title>
+        <link rel="apple-touch-icon " href="../images/prof.png " />
+        <link rel="shortcut icon " href="../images/prof.png " />
+        <meta name="description" content="Prince Niyonshuti , a fullstack developer" />
+        <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../css/dashboard.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+
+        </style>
+    </head>
+
+    <body>
+        <div class="sidebar">
+            <div class="logo-details">
+                <i class="bx bx-user-check"></i>
+                <span class="logo_name">Prince Dev</span>
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="dashboard.html">
+                        <i class="bx bx-grid-alt"></i>
+                        <span class="links_name">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="articles.html">
+                        <i class="bx bx-box"></i>
+                        <span class="links_name">Articles</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="queries.html">
+                        <i class="bx bx-message"></i>
+                        <span class="links_name">Queries</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="users.html">
+                        <i class="bx bx-user"></i>
+                        <span class="links_name">Users</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="subscribers.html"  class="active">
+                        <i class="bx bx-user"></i>
+                        <span class="links_name">Subscribers</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="profile.html">
+                        <i class="bx bx-cog"></i>
+                        <span class="links_name">Profile</span>
+                    </a>
+                </li>
+                <li class="log_out">
+                    <a href="">
+                        <i class="bx bx-log-out"></i>
+                        <span class="links_name" onclick="logOut()">Log out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <section class="home-section">
+            <nav>
+                <div class="sidebar-button">
+                    <i class="bx bx-menu sidebarBtn"></i>
+                    <span class="dashboard">Dashboard</span>
+                </div>
+                <div class="search-box">
+                    <input type="text" placeholder="Search..." />
+                    <i class="bx bx-search"></i>
+                </div>
+                <div class="profile-details">
+                    <img src="../images/prof.png" alt="" />
+                    <span id="admin_name" class="admin_name">Prince Np</span>
+                    <i class="bx bx-chevron-down"></i>
+                </div>
+            </nav>
+
+            <div class="home-content">
+                <div style="margin-left: 20px;margin-bottom: 5px;">
+                    &nbsp;
+                </div>
+                <div class="article-boxes">
+                    <div class="recent-article box" style="width:100%">
+                        <div class="title">
+                            All Subscribers
+                        </div>
+
+                        <div class="article-details">
+                            <table id="article">
+                                <tr>
+                                    <th style="width:40px">#</th>
+                                    <th>Username</th>
+                                    <th>Email</th>
+                                    <th>Subscribed at</th>
+                                    <th style="text-align: center;">
+                                        Actions
+                                    </th>
+                                </tr>
+                                <tr style="height:50px !important">
+                                    <td>
+                                        01
+                                    </td>
+                                    <td>
+                                        Andela
+                                    </td>
+                                    <td>Andela@gmail.com</td>
+                                    <td>24 , February 2022</td>
+                                    <td>
+                                        <div class="button">
+                                            <a href="#" style="background-color:#1400e3">Block</a>
+                                            &nbsp;
+                                            <a href="#" style="background-color:#f10606">Delete</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr style="height:50px !important">
+                                    <td>
+                                        02
+                                    </td>
+                                    <td>
+                                        Prince
+                                    </td>
+                                    <td>Prince@gmail.com</td>
+                                    <td>24 , February 2022</td>
+                                    <td>
+                                        <div class="button">
+                                            <a href="#" style="background-color:#1400e3">Block</a>
+                                            &nbsp;
+                                            <a href="#" style="background-color:#f10606">Delete</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr style="height:50px !important">
+                                    <td>
+                                        03
+                                    </td>
+                                    <td>
+                                        King
+                                    </td>
+                                    <td>King@gmail.com</td>
+                                    <td>24 , February 2022</td>
+                                    <td>
+                                        <div class="button">
+                                            <a href="#" style="background-color:#1400e3">Block</a>
+                                            &nbsp;
+                                            <a href="#" style="background-color:#f10606">Delete</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="../js/dashboard.js"></script>
+    </body>
+
+</html>
