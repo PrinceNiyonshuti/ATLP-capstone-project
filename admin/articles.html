@@ -95,110 +95,37 @@
                     <div class="recent-article box" style="width:100%">
                         <div class="title">
                             <div class="button" style="justify-content: space-between;margin-bottom: 15px">
-                                <span >All Articles</span>
+                                <span>All Articles</span>
                                 <a href="new_article.html">New Article</a>
                             </div>
                         </div>
-                        
                         <div class="article-details">
+
                             <table id="article">
                                 <tr>
                                     <th>Cover</th>
                                     <th>Title</th>
-                                    <th>Views</th>
+                                    <th>slug</th>
                                     <th style="text-align: center;">
                                         Actions
                                     </th>
                                 </tr>
-                                <tr>
-                                    <td><img src="../images/prof.png" width="50px" alt="" /></td>
-                                    <td>
-                                        <a href="" style="text-decoration:none;color:black">
-                                            <h4>lorem ipsum dolor sit amet, consectetur adip</h4>
-                                        </a>
-                                    </td>
-                                    <td>12 Views</td>
-                                    <td>
-                                        <div class="button" >
-                                            <a href="#" style="background-color:#1400e3">Edit</a>
-                                            &nbsp;
-                                            <a href="#" style="background-color:#f10606">Delete</a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><img src="../images/prof.png" width="50px" alt="" /></td>
-                                    <td>
-                                        <a href="" style="text-decoration:none;color:black">
-                                            <h4>lorem ipsum dolor sit amet, consectetur adip</h4>
-                                        </a>
-                                    </td>
-                                    <td>12 Views</td>
-                                    <td>
-                                        <div class="button" >
-                                            <a href="#" style="background-color:#1400e3">Edit</a>
-                                            &nbsp;
-                                            <a href="#" style="background-color:#f10606">Delete</a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><img src="../images/prof.png" width="50px" alt="" /></td>
-                                    <td>
-                                        <a href="" style="text-decoration:none;color:black">
-                                            <h4>lorem ipsum dolor sit amet, consectetur adip</h4>
-                                        </a>
-                                    </td>
-                                    <td>12 Views</td>
-                                    <td>
-                                        <div class="button" >
-                                            <a href="#" style="background-color:#1400e3">Edit</a>
-                                            &nbsp;
-                                            <a href="#" style="background-color:#f10606">Delete</a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><img src="../images/prof.png" width="50px" alt="" /></td>
-                                    <td>
-                                        <a href="" style="text-decoration:none;color:black">
-                                            <h4>lorem ipsum dolor sit amet, consectetur adip</h4>
-                                        </a>
-                                    </td>
-                                    <td>12 Views</td>
-                                    <td>
-                                        <div class="button" >
-                                            <a href="#" style="background-color:#1400e3">Edit</a>
-                                            &nbsp;
-                                            <a href="#" style="background-color:#f10606">Delete</a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><img src="../images/prof.png" width="50px" alt="" /></td>
-                                    <td>
-                                        <a href="" style="text-decoration:none;color:black">
-                                            <h4>lorem ipsum dolor sit amet, consectetur adip</h4>
-                                        </a>
-                                    </td>
-                                    <td>12 Views</td>
-                                    <td>
-                                        <div class="button" >
-                                            <a href="#" style="background-color:#1400e3">Edit</a>
-                                            &nbsp;
-                                            <a href="#" style="background-color:#f10606">Delete</a>
-                                        </div>
-                                    </td>
-                                </tr>
-            
-            
+                                <tbody id="articles-data"></tbody>
                             </table>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-storage.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="../js/firebase.js"></script>
         <script src="../js/dashboard.js"></script>
+        <script src="../js/articles.js"></script>
     </body>
 
 </html>
