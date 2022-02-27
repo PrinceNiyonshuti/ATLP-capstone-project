@@ -18,7 +18,7 @@
 		<header class="header" id="header">
 			<nav class="nav container">
 				<a href="index.html" class="nav_logo">
-					<h1 >Prince Dev</h1>
+					<h1>Prince Dev</h1>
 				</a>
 				<div class="nav_menu" id="nav-menu">
 					<ul class="nav_list grid">
@@ -64,7 +64,7 @@
 						</li>
 						<i class="uil uil-times nav_close" id="nav-close" style="font-size: 30px;margin:auto"></i>
 					</ul>
-		
+
 				</div>
 				<div class="nav_btns">
 					<div class="nav_toggle" id="nav-toggle">
@@ -713,16 +713,25 @@
 							<p class="project_description">
 								If you want relevant updates occasionally,sign up for private newsletter.
 							</p>
-							<a href="#" class="button button--flex button--white">
-								Contact me
-								<i class="uil uil-message project_icon button_icon"></i>
-							</a>
+							<div class="subscribe">
+								<div class="form">
+									<form class="form" onsubmit="return false;" >
+										<input type="email" class="form__email" placeholder="Enter your email address"
+											style="height: 50px;" />
+										<button type="submit" class="button button--flex button--white"
+											style="width:30%;margin-left:5px; border: none;font-size:18px;font-weight:bold">
+											Sign Up
+										</button>
+									</form>
+								</div>
+							</div>
 						</div>
 
 						<img src="images/prof.png" alt="" class="project_img" />
 					</div>
 				</div>
 			</section>
+
 			<!--==================== CONTACT ME ====================-->
 			<section class="contact section" id="contact">
 				<h2 class="section_title">Contact Me</h2>
@@ -755,7 +764,7 @@
 						</div>
 					</div>
 
-					<form  onsubmit="return false;" class="contact_form grid">
+					<form onsubmit="return false;" class="contact_form grid">
 						<div class="contact_inputs grid">
 							<div class="contact_content">
 								<label for="name" class="contact_label">name</label>
@@ -772,7 +781,7 @@
 						</div>
 						<div class="contact_content">
 							<label for="Message" class="contact_label">Message</label>
-							<textarea  id="content" cols="0" rows="10" class="class_input"></textarea>
+							<textarea id="content" cols="0" rows="10" class="class_input"></textarea>
 						</div>
 						<div>
 							<input type="submit" value="Send Message" onclick="sendQuery()" class="button button--flex">
