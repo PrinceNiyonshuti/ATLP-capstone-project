@@ -697,11 +697,11 @@ textarea {
 	background-color: #fff;
 	color: var(--first-color);
 	display: inline-block;
-    background-color: var(--first-color);
-    color: #fff;
-    padding: 1rem;
-    border-radius: 0.8rem;
-    font-weight: var(--font-medium);
+	background-color: var(--first-color);
+	color: #fff;
+	padding: 1rem;
+	border-radius: 0.8rem;
+	font-weight: var(--font-medium);
 }
 
 /*==================== MEDIA QUERIES ====================*/
@@ -873,5 +873,37 @@ textarea {
 	}
 	.footer_link {
 		padding-left: 19px;
+	}
+}
+
+.loader {
+	border: 9px solid #f3f3f3;
+	border-radius: 50%;
+	border-top: 9px solid #0a2557;
+	border-bottom: 9px solid #0a2557;
+	width: 120px;
+	height: 120px;
+	-webkit-animation: spin 2s linear infinite;
+	animation: spin 2s linear infinite;
+	margin: auto;
+}
+
+@-webkit-keyframes spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
 	}
 }

@@ -21,7 +21,7 @@
         <header class="header" id="header">
             <nav class="nav container">
                 <a href="index.html" class="nav_logo">
-                    <h1 >Prince Dev</h1>
+                    <h1>Prince Dev</h1>
                 </a>
                 <div class="nav_menu" id="nav-menu">
                     <ul class="nav_list grid">
@@ -67,7 +67,7 @@
                         </li>
                         <i class="uil uil-times nav_close" id="nav-close" style="font-size: 30px;margin:auto"></i>
                     </ul>
-                    
+
                 </div>
                 <div class="nav_btns">
                     <div class="nav_toggle" id="nav-toggle">
@@ -76,18 +76,20 @@
                 </div>
             </nav>
         </header>
-        <div class="title-container">
-            <h1>How i started coding , the journery and all the storms that comes with it</h1>
-            <p>falling and getting up as the part of the journery to become a good developer</p>
+        <div id="myDiv" class="loader" style="margin-top:90px">
         </div>
-        <img src="images/blog_img.png" class="article-img" />
-        <div class="article-container">
+        <div class="title-container" id="b-title" style="display:none">
+            <h1 id="title">a</h1>
+            <p id="slug">b</p>
+        </div>
+        <img src="images/blog_img.png" id="cover" class="article-img" style="height:681px;width:100%;display:none" />
+        <div class="article-container" id="b-descr" style="display:none">
             <div class="author">
                 <div class="author-info">
                     <img class="avatar" src="images/prof.png" alt="" />
                     <div class="article-text">
-                        <h4 class="author-name"><a href="">Prince Niyonshuti</a></h4>
-                        <p>Jan 04 , 2022 - 10 min read</p>
+                        <h4 class="author-name"><a href="" id="author">Prince Niyonshuti</a></h4>
+                        <p id="published">Jan 04 , 2022 - 10 min read</p>
                     </div>
                 </div>
                 <div class="article-option">
@@ -95,7 +97,7 @@
                 </div>
             </div>
             <div class="content-panel">
-                <p>
+                <p id="content">
                     Ravenously while stridently coughed far promiscuously below jeez
                     much yikes bland that salamander cunningly some over abhorrent as
                     house with between ouch that well scurrilously alas capybara
@@ -103,33 +105,6 @@
                     bled alas lighted together waved upheld more far woolly ahead darn
                     far far bore far far saw baneful upset rebound bowed possessive
                     before or indisputably against.
-                </p>
-                <p>
-                    After hamster hello less far astride where accordingly much
-                    because some far innocently invoked far pre-set or objective this
-                    pangolin tendentiously eagle near spread and overlay as abysmal a
-                    and before walrus much therefore some close victorious jeepers
-                    deeply forward while jeez and overlaid save hey ritually
-                    notwithstanding mounted about nonchalantly and less hence far like
-                    hey kissed. Hello impotent ravenous hey accordingly well much
-                    lopsidedly one far blinked lorikeet sternly futile jeepers strewed
-                    well following subconscious far on egregiously and away far alas
-                    much forward in but far opposite less editorial some together.
-                </p>
-                <h4>Simple answer is, because other candidates won’t.</h4>
-                <p>
-                    Ravenously while stridently coughed far promiscuously below jeez
-                    much yikes bland that salamander cunningly some over abhorrent as
-                    house with between ouch that well scurrilously alas capybara
-                    massive outdid oh said hello majestically roadrunner lobster much
-                    bled alas lighted together waved upheld.
-                </p>
-                <p>
-                    Ravenously while stridently coughed far promiscuously below jeez
-                    much yikes bland that salamander cunningly some over abhorrent as
-                    house with between ouch that well scurrilously alas capybara
-                    massive outdid oh said hello majestically roadrunner lobster much
-                    bled alas lighted together waved upheld.
                 </p>
             </div>
             <div class="article-tags">
@@ -232,6 +207,13 @@
         </div>
         </div>
         <script src="js/main.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-storage.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="js/firebase.js"></script>
+        <script src="js/readBlog.js"></script>
     </body>
 
 </html>
