@@ -59,23 +59,45 @@ db.collection("articles")
 	.get()
 	.then((snapshot) => {
 		snapshot.docs.forEach((doc) => {
-			// console.log(doc.data());
-			let test = doc.id;
 			html =
 				"<tr data-id=" +
 				doc.id +
 				"><td><img src=" +
 				doc.data().cover +
-				"+ width='70px' height='60px' /><td>" +
+				" width='70px' height='60px' /><td>" +
 				doc.data().title +
 				"</td><td>" +
 				doc.data().slug +
-				"</td><td><div class='button' style='justify-content: center;'><a href='#' style='background-color:#1400e3;'>Edit</a>&nbsp;<button style='background-color:#f10606' onclick='delArticle()'>Delete</button></div></td></tr>";
-
+				"</td><td><div class='button' style='justify-content: center;'><a href='update_article.html?" +
+				doc.id +
+				"' class='del-btn' style='background-color:#1400e3;'>Edit</a>&nbsp;<button class='del-btn' id='" +
+				doc.id +
+				"' onclick='delArticle(this.id)'>Delete</button></div></td></tr>";
 			document.getElementById("articles-data").innerHTML += html;
 		});
 	});
 
-function delArticle(id) {
-	console.log(id);
+function delArticle(DataId) {
+	console.log(DataId);
+	swal({
+		title: "Attention",
+		text: "Are you sure!! You want to Delete",
+		icon: "warning",
+		buttons: true,
+		dangerMode: true,
+	}).then((willDelete) => {
+		if (willDelete) {
+			db.collection("articles")
+				.doc(DataId)
+				.delete()
+				.then(() => {
+					swal("successfuly", "You have Delete ", "success").then(() => {
+						location.reload();
+					});
+				})
+				.catch((error) => {
+					console.error("Error removing document: ", error);
+				});
+		}
+	});
 }

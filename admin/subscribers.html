@@ -101,71 +101,27 @@
                             <table id="article">
                                 <tr>
                                     <th style="width:40px">#</th>
-                                    <th>Username</th>
                                     <th>Email</th>
                                     <th>Subscribed at</th>
                                     <th style="text-align: center;">
                                         Actions
                                     </th>
                                 </tr>
-                                <tr style="height:50px !important">
-                                    <td>
-                                        01
-                                    </td>
-                                    <td>
-                                        Andela
-                                    </td>
-                                    <td>Andela@gmail.com</td>
-                                    <td>24 , February 2022</td>
-                                    <td>
-                                        <div class="button">
-                                            <a href="#" style="background-color:#1400e3">Block</a>
-                                            &nbsp;
-                                            <a href="#" style="background-color:#f10606">Delete</a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr style="height:50px !important">
-                                    <td>
-                                        02
-                                    </td>
-                                    <td>
-                                        Prince
-                                    </td>
-                                    <td>Prince@gmail.com</td>
-                                    <td>24 , February 2022</td>
-                                    <td>
-                                        <div class="button">
-                                            <a href="#" style="background-color:#1400e3">Block</a>
-                                            &nbsp;
-                                            <a href="#" style="background-color:#f10606">Delete</a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr style="height:50px !important">
-                                    <td>
-                                        03
-                                    </td>
-                                    <td>
-                                        King
-                                    </td>
-                                    <td>King@gmail.com</td>
-                                    <td>24 , February 2022</td>
-                                    <td>
-                                        <div class="button">
-                                            <a href="#" style="background-color:#1400e3">Block</a>
-                                            &nbsp;
-                                            <a href="#" style="background-color:#f10606">Delete</a>
-                                        </div>
-                                    </td>
-                                </tr>
+                                <tbody id="subscribers-data"></tbody>
                             </table>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-storage.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="../js/firebase.js"></script>
         <script src="../js/dashboard.js"></script>
+        <script src="../js/subscribers.js"></script>
     </body>
 
 </html>

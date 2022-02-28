@@ -137,3 +137,29 @@ function sendQuery() {
 			});
 		});
 }
+
+function subNewsletter() {
+	const email = document.getElementById("subEmail").value;
+	db.collection("subscribers")
+		.doc()
+		.set({
+			email,
+			created_at: new Date(),
+		})
+		.then(() => {
+			document.getElementById("subEmail").reset();
+			swal({
+				title: "Subscribed to Newsletter",
+				icon: "success",
+				timer: 2000,
+			});
+		})
+		.catch((error) => {
+			swal({
+				title: "Error",
+				text: error.message,
+				icon: "error",
+				timer: 2000,
+			});
+		});
+}

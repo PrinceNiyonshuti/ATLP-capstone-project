@@ -389,6 +389,19 @@ nav .profile-details i {
 	font-weight: 400;
 	color: #333;
 }
+
+.del-btn {
+	background-color: #f10606;
+	color: #fff;
+	padding: 4px 12px;
+	font-size: 15px;
+	font-weight: 400;
+	border-radius: 4px;
+	text-decoration: none;
+	transition: all 0.3s ease;
+	border: none;
+	cursor: pointer;
+}
 /* Responsive Media Query */
 @media (max-width: 1240px) {
 	.sidebar {
