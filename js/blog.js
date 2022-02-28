@@ -5,7 +5,6 @@ db.collection("articles")
 	.get()
 	.then((snapshot) => {
 		snapshot.docs.forEach((doc) => {
-			console.log("das");
 			html =
 				"<div class='card'><img src=" +
 				doc.data().cover +
@@ -19,3 +18,8 @@ db.collection("articles")
 			document.getElementById("blogs-data").innerHTML += html;
 		});
 	});
+
+setTimeout(function () {
+	document.getElementById("myDiv").style.display = "none";
+	document.getElementById("blogs-data").style.display = "flex";
+}, 3500);
