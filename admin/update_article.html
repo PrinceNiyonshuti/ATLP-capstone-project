@@ -100,7 +100,7 @@
                     <div class="recent-article box" style="width:100%">
                         <div class="">
                             <div class="" style="justify-content: space-between;margin-bottom: 15px">
-                                <a href="">Go Back</a>
+                                <a href="./articles.html">Go Back</a>
                             </div>
                         </div>
 
@@ -117,7 +117,8 @@
                                         <div class="form-col">
                                             <label>Title</label>
                                             <input type="text" id="title" placeholder="Enter Title">
-                                            <input type="hidden" id="author" value="Prince">
+                                            <input type="hidden" id="author" value="Prince"> 
+                                            <input type="hidden" id="DataID" value="Prince"> 
                                         </div>
                                         <div class="form-col">
                                             <label>Slug</label>
@@ -130,7 +131,7 @@
                                         <textarea name="" id="description" cols="30" rows="10"></textarea>
                                     </div>
 
-                                    <input type="submit" onclick="saveArticle()" value="Update Article">
+                                    <input type="submit" onclick="updateArticle()" value="Update Article">
                                 </form>
                             </section>
                         </div>
@@ -138,13 +139,14 @@
                 </div>
             </div>
         </section>
-        <script src="../js/articles.js"></script>
+        
         <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-storage.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="../js/firebase.js"></script>
+        <script src="../js/updateArticle.js"></script>
         <script>
             function readURL(input) {
                 if (input.files && input.files[0]) {
@@ -157,6 +159,7 @@
                     reader.readAsDataURL(input.files[0]);
                 }
             }
+            
         </script>
     </body>
 

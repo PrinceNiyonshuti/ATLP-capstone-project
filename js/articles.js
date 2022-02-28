@@ -59,8 +59,6 @@ db.collection("articles")
 	.get()
 	.then((snapshot) => {
 		snapshot.docs.forEach((doc) => {
-			// console.log(doc.data());
-			let test = doc.id;
 			html =
 				"<tr data-id=" +
 				doc.id +
@@ -70,9 +68,9 @@ db.collection("articles")
 				doc.data().title +
 				"</td><td>" +
 				doc.data().slug +
-				"</td><td><div class='button' style='justify-content: center;'><button class='del-btn' style='background-color:#1400e3;' id='" +
+				"</td><td><div class='button' style='justify-content: center;'><a href='update_article.html?" +
 				doc.id +
-				"' onclick='editArticle(this.id)'>Edit</button>&nbsp;<button class='del-btn' id='" +
+				"' class='del-btn' style='background-color:#1400e3;'>Edit</a>&nbsp;<button class='del-btn' id='" +
 				doc.id +
 				"' onclick='delArticle(this.id)'>Delete</button></div></td></tr>";
 			document.getElementById("articles-data").innerHTML += html;
@@ -102,7 +100,4 @@ function delArticle(DataId) {
 				});
 		}
 	});
-}
-function editArticle(id) {
-	console.log(id);
 }
