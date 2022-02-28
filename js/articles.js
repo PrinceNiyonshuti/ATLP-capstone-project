@@ -64,7 +64,7 @@ db.collection("articles")
 				doc.id +
 				"><td><img src=" +
 				doc.data().cover +
-				"+ width='70px' height='60px' /><td>" +
+				" width='70px' height='60px' /><td>" +
 				doc.data().title +
 				"</td><td>" +
 				doc.data().slug +
