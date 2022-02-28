@@ -147,6 +147,7 @@ function subNewsletter() {
 			created_at: new Date(),
 		})
 		.then(() => {
+			document.getElementById("subEmail").reset();
 			swal({
 				title: "Subscribed to Newsletter",
 				icon: "success",
