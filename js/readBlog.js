@@ -6,9 +6,11 @@ db.collection("articles")
 	.doc(DataId)
 	.get()
 	.then((doc) => {
+		let published = doc.data().created_at.toDate().toDateString();
 		document.getElementById("title").innerHTML = doc.data().title;
 		document.getElementById("slug").innerHTML = doc.data().slug;
 		document.getElementById("author").innerHTML = doc.data().author;
+		document.getElementById("published").innerHTML = published;
 		document.getElementById("content").innerHTML = doc.data().description;
 		document.getElementById("cover").src = doc.data().cover;
 	})
