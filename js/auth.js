@@ -5,73 +5,77 @@
  * @role register user
  */
 
-function addUser() {
+async function addUser() {
 	const email = document.getElementById("email").value;
 	const password = document.getElementById("password").value;
 	const username = document.getElementById("username").value;
-	auth
-		.createUserWithEmailAndPassword(email, password)
-		.then((userCredential) => {
-			const user = userCredential.user;
-			localStorage.setItem("user", JSON.stringify(user));
-			saveUserProfile({ username, email });
-		})
-		.catch((error) => {
-			const errorCode = error.code;
-			const errorMessage = error.message;
-			swal({
-				title: "Invalid Credentials",
-				text: errorMessage,
-				icon: "error",
-				timer: 2000,
-			});
+	const role = "standard-user";
+
+	try {
+		const SignUp = await fetch(api + "auth/signup", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				username: username,
+				role: role,
+				email: email,
+				password: password,
+			}),
 		});
+		response = await SignUp.json();
+		if (SignUp.status == 201 && response.data) {
+			swal("Success", response.message, "success").then(() => {
+				localStorage.setItem("token", "Bearer " + response.token);
+				localStorage.setItem("user", JSON.stringify(response.data));
+				if (response.data.role == "admin") {
+					window.location.href = "../admin/dashboard.html";
+				} else {
+					window.location.href = "../user/userDashboard.html";
+				}
+			});
+		} else {
+			swal("Error", response.message, "error");
+		}
+	} catch (error) {
+		swal("Error", response.message, "error");
+	}
 }
 /*
  @role register user
 */
-function loginUser() {
+async function loginUser() {
 	const email = document.getElementById("email").value;
 	const password = document.getElementById("password").value;
-	auth
-		.signInWithEmailAndPassword(email, password)
-		.then((userCredential) => {
-			const user = userCredential.user;
-			console.log(user.email);
-			const subscriber = user.email;
-			const admin = "npprince47@gmail.com";
-			if (subscriber == admin) {
-				swal({
-					title: "Logged In Admin",
-					icon: "success",
-					timer: 2000,
-				}).then(() => {
-					localStorage.setItem("user", JSON.stringify(user));
-					window.location.href = "../admin/dashboard.html";
-				});
-				console.log("admin");
-			} else {
-				swal({
-					title: "Logged In",
-					icon: "success",
-					timer: 2000,
-				}).then(() => {
-					localStorage.setItem("user", JSON.stringify(user));
-					window.location.href = "../user/userDashboard.html";
-				});
-				console.log("user");
-			}
-		})
-		.catch((error) => {
-			const errorCode = error.code;
-			const errorMessage = error?.message;
-			swal({
-				title: "Invalid Credentials",
-				text: ``,
-				icon: "error",
-				timer: 2000,
-			});
+	try {
+		const SignIn = await fetch(api + "auth/login", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				email: email,
+				password: password,
+			}),
 		});
+		response = await SignIn.json();
+		if (SignIn.status == 200 && response.data) {
+			swal("Success", response.message, "success").then(() => {
+				localStorage.setItem("token", "Bearer " + response.token);
+				localStorage.setItem("user", JSON.stringify(response.data));
+				if (response.data.role == "admin") {
+					window.location.href = "../admin/dashboard.html";
+				} else {
+					window.location.href = "../user/userDashboard.html";
+				}
+			});
+		} else {
+			swal("Error", response.message, "error");
+		}
+	} catch (error) {
+		swal("Error", response.message, "error");
+	}
 }
 
 /*
