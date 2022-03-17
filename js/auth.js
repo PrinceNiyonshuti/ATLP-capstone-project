@@ -42,6 +42,7 @@ async function addUser() {
 		swal("Error", response.message, "error");
 	}
 }
+
 /*
  @role Signin user
 */
@@ -81,6 +82,7 @@ async function loginUser() {
 /*
  @role send query 
 */
+
 async function sendQuery() {
 	const name = document.getElementById("name").value;
 	const email = document.getElementById("email").value;
@@ -124,6 +126,10 @@ async function sendQuery() {
 		}
 	}
 }
+
+/*
+ @role subscribe to newsletter
+*/
 
 async function subNewsletter() {
 	const email = document.getElementById("subEmail").value;
