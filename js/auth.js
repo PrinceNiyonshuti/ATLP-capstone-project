@@ -43,7 +43,7 @@ async function addUser() {
 	}
 }
 /*
- @role register user
+ @role Signin user
 */
 async function loginUser() {
 	const email = document.getElementById("email").value;
@@ -76,36 +76,6 @@ async function loginUser() {
 	} catch (error) {
 		swal("Error", response.message, "error");
 	}
-}
-
-/*
- @role save user profile
-*/
-function saveUserProfile({ username, email }) {
-	db.collection("users")
-		.doc()
-		.set({
-			username,
-			email,
-			created_at: new Date(),
-		})
-		.then(() => {
-			swal({
-				title: "Account Created",
-				icon: "success",
-				timer: 2000,
-			}).then(() => {
-				window.location.href = "../user/userDashboard.html";
-			});
-		})
-		.catch((error) => {
-			swal({
-				title: "Error",
-				text: ``,
-				icon: "error",
-				timer: 2000,
-			});
-		});
 }
 
 /*
@@ -142,28 +112,35 @@ function sendQuery() {
 		});
 }
 
-function subNewsletter() {
+async function subNewsletter() {
 	const email = document.getElementById("subEmail").value;
-	db.collection("subscribers")
-		.doc()
-		.set({
-			email,
-			created_at: new Date(),
-		})
-		.then(() => {
-			document.getElementById("subEmail").reset();
-			swal({
-				title: "Subscribed to Newsletter",
-				icon: "success",
-				timer: 2000,
-			});
-		})
-		.catch((error) => {
-			swal({
-				title: "Error",
-				text: error.message,
-				icon: "error",
-				timer: 2000,
-			});
-		});
+	email.value = "dara";
+	// if (email == "") {
+	// 	swal("Error", "Please fill in the email", "error");
+	// } else {
+	// 	try {
+	// 		const subscribeToNewsletter = await fetch(api + "subscribers", {
+	// 			method: "POST",
+	// 			headers: {
+	// 				"Content-Type": "application/json",
+	// 			},
+	// 			body: JSON.stringify({
+	// 				email: email,
+	// 			}),
+	// 		});
+	// 		response = await subscribeToNewsletter.json();
+	// 		if (subscribeToNewsletter.status == 201 && response.data) {
+	// 			swal({
+	// 				title: "Subscribed to Newsletter",
+	// 				icon: "success",
+	// 				timer: 2000,
+	// 			});
+	// 		} else {
+	// 			swal("Error", response.message, "error");
+	// 			email.value = "";
+	// 		}
+	// 	} catch (error) {
+	// 		swal("Error", response.message, "error");
+	// 	}
+	// }
 }
