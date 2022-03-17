@@ -7,12 +7,12 @@ function getProfile() {
 	let user = localStorage.getItem("user");
 	if (user) {
 		user = JSON.parse(user);
-		const subscriber = user.email;
-		const admin = "npprince47@gmail.com";
-		if (subscriber == admin) {
+		const role = user.role;
+		const admin = "admin";
+		if (role == admin) {
 			localStorage.setItem("user", JSON.stringify(user));
 			window.location.href = "../admin/dashboard.html";
-		} else if (subscriber != admin) {
+		} else if (role != admin) {
 			localStorage.setItem("user", JSON.stringify(user));
 			window.location.href = "../user/userDashboard.html";
 		} else {
