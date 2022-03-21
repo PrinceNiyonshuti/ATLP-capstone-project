@@ -20,3 +20,14 @@ function linkAction() {
 	navMenu.classList.remove("show-menu");
 }
 navLink.forEach((n) => n.addEventListener("click", linkAction));
+
+// check if authenticated
+async function getProfile() {
+	let user = localStorage.getItem("user");
+	user
+		? (document.getElementById("auth-data").innerHTML =
+				"<a href='login.html' class='nav_link'><i class='uil uil-message nav_icon'></i> Dashboard</a>",)
+		: (document.getElementById("auth-data").innerHTML =
+				"<a href='login.html' class='nav_link'><i class='uil uil-message nav_icon'></i> login</a>");
+}
+getProfile();

@@ -5,7 +5,7 @@ async function getProfile() {
 	if (!user) return (window.location.href = "./../login.html");
 	user = JSON.parse(user);
 	document.getElementById("admin_name").innerHTML = user.email;
-	// document.getElementById("user-data").innerHTML = user.username;
+	document.getElementById("user-data").innerHTML = user.username;
 }
 getProfile();
 

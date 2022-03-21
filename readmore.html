@@ -26,27 +26,27 @@
                 <div class="nav_menu" id="nav-menu">
                     <ul class="nav_list grid">
                         <li class="nav_item">
-                            <a href="#home" class="nav_link">
+                            <a href="index.html#home" class="nav_link">
                                 <i class="uil uil-estate nav_icon"></i> Home
                             </a>
                         </li>
                         <li class="nav_item">
-                            <a href="#about" class="nav_link">
+                            <a href="index.html#about" class="nav_link">
                                 <i class="uil uil-user nav_icon"></i> About
                             </a>
                         </li>
                         <li class="nav_item">
-                            <a href="#skills" class="nav_link">
+                            <a href="index.html#skills" class="nav_link">
                                 <i class="uil uil-file-alt nav_icon"></i> Skills
                             </a>
                         </li>
                         <li class="nav_item">
-                            <a href="#services" class="nav_link">
+                            <a href="index.html#services" class="nav_link">
                                 <i class="uil uil-briefcase-alt nav_icon"></i> Services
                             </a>
                         </li>
                         <li class="nav_item">
-                            <a href="#portfolio" class="nav_link">
+                            <a href="index.html#portfolio" class="nav_link">
                                 <i class="uil uil-scenery nav_icon"></i> Portifolio
                             </a>
                         </li>
@@ -56,14 +56,12 @@
                             </a>
                         </li>
                         <li class="nav_item">
-                            <a href="#contact" class="nav_link">
+                            <a href="index.html#contact" class="nav_link">
                                 <i class="uil uil-message nav_icon"></i> Contact
                             </a>
                         </li>
-                        <li class="nav_item">
-                            <a href="login.html" class="nav_link">
-                                <i class="uil uil-message nav_icon"></i> login
-                            </a>
+                        <li class="nav_item" id="auth-data">
+                        
                         </li>
                         <i class="uil uil-times nav_close" id="nav-close" style="font-size: 30px;margin:auto"></i>
                     </ul>
@@ -124,26 +122,19 @@
                 </div>
                 <div>
                     <h2>Leave a comment</h2>
-                    <section class="comment-form">
-                        <form>
-                            <div class="form-row">
-                                <div class="form-col">
-                                    <label>Names</label>
-                                    <input type="text" placeholder="Enter your names">
-                                </div>
-                                <div class="form-col">
-                                    <label>Email</label>
-                                    <input type="email" placeholder="Enter your email">
-                                </div>
-                            </div>
+                    <section class="comment-form" id="commenting-data">
+                        <form onsubmit="return false;">
                             <div>
                                 <label>Message</label>
                                 <br>
-                                <textarea name="" id="" cols="30" rows="10"></textarea>
+                                <textarea id="data" cols="0" rows="10" class="class_input" style="color: black;"></textarea>
                             </div>
 
-                            <input type="submit" value="Send Message">
+                            <input type="submit" onclick="sendComment()" value="Send Message">
                         </form>
+                    </section>
+                    <section class="comment-form" id="register-data">
+                        <a href="register.html">Register </a> to start contributing to our community
                     </section>
                 </div>
             </div>
@@ -152,6 +143,7 @@
         <script src="js/main.js"></script>
         <script src="js/firebase.js"></script>
         <script src="js/readBlog.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </body>
 
 </html>
