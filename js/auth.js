@@ -68,7 +68,7 @@ async function loginUser() {
 				if (response.data.role == "admin") {
 					window.location.href = "../admin/dashboard.html";
 				} else {
-					window.location.href = "../user/userDashboard.html";
+					window.location.href = "../user/dashboard.html";
 				}
 			});
 		} else {
