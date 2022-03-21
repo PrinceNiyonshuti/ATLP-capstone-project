@@ -1,25 +1,47 @@
 /** @format */
-
-// get users collection
-db.collection("subscribers")
-	.get()
-	.then((snapshot) => {
-		var counter = 0;
-		snapshot.docs.forEach((doc) => {
-			counter += 1;
-			let day = doc.data().created_at;
-			const joined = day.toDate().toDateString();
-			html =
-				"<tr  style='height:50px !important' data-id=" +
-				doc.id +
-				"><td>" +
-				counter +
-				"</td><td>" +
-				doc.data().email +
-				"</td><td>" +
-				joined +
-				"</td><td><div class='button'><a href='#' style='background-color:#1400e3'>Block</a>&nbsp;<a href='#' style='background-color:#f10606'>Delete</a></div></td></tr>";
-
-			document.getElementById("subscribers-data").innerHTML += html;
-		});
-	});
+// get queries collection
+const getSubscribers = async () => {
+	let result = [];
+	fetch(api + "subscribers", {
+		method: "GET",
+		headers: {
+			"Content-Type": "application/json",
+			authorization: token,
+		},
+	})
+		.then((response) => response.json())
+		.then((json) => {
+			result = json.data;
+			var counter = 0;
+			result?.length
+				? (document.querySelector("#subscribers-data").innerHTML = result
+						.map(
+							(res) => `
+							<tr>
+								<td>${(counter += 1)}</td>
+								<td>
+									<a href="" style="text-decoration:none;color:black">
+										<h4>${res?.email}</h4>
+									</a>
+								</td>
+								<td  style="padding:0px 10px"><small style="font-weight:bold;"><p>${new Date(
+									res.createdAt
+								).toDateString()}</p></td>
+								<td>
+									<div class="button" style="justify-content: center;">
+										<button class="del-btn" id="${
+											res?._id
+										}" onclick="delUser(this.id)" style="margin:4px;">Deactivate</button>
+									</div>
+								</td>
+							</tr>
+						`
+						)
+						.join(""))
+				: (document.querySelector(
+						"#subscribers-data"
+				  ).innerHTML = `<h1>Sorry , No User Available</h1>`);
+		})
+		.catch((err) => console.log(err));
+};
+getSubscribers();

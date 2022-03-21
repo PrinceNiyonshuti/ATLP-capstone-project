@@ -88,6 +88,11 @@
 			</nav>
 
 			<div class="home-content">
+				<div style="margin-left: 20px;margin-bottom: 5px;">
+					<h2>
+						Welcome back <label id="user-data">user</label>
+					</h2>
+				</div>
 				<div class="article-boxes">
 					<div class="recent-article box">
 						<div class="title">Recent Articles</div>
@@ -98,88 +103,20 @@
 									<th>Title</th>
 									<th>Views</th>
 								</tr>
-								<tr>
-									<td><img src="../images/prof.png" width="50px" alt="" /></td>
-									<td>Maria Anders</td>
-									<td>12 Views</td>
-								</tr>
-								<tr>
-									<td><img src="../images/prof.png" width="50px" alt="" /></td>
-									<td>Maria Anders</td>
-									<td>12 Views</td>
-								</tr>
-								<tr>
-									<td><img src="../images/prof.png" width="50px" alt="" /></td>
-									<td>Maria Anders</td>
-									<td>12 Views</td>
-								</tr>
-								<tr>
-									<td><img src="../images/prof.png" width="50px" alt="" /></td>
-									<td>Maria Anders</td>
-									<td>12 Views</td>
-								</tr>
-								<tr>
-									<td><img src="../images/prof.png" width="50px" alt="" /></td>
-									<td>Maria Anders</td>
-									<td>12 Views</td>
-								</tr>
+								<tbody id="articles-data">
+								</tbody>
 							</table>
 						</div>
 						<div class="button">
-							<a href="#">See All</a>
+							<a href="articles.html">See All</a>
 						</div>
 					</div>
 					<div class="top-article box">
 						<div class="title">Recent Queries</div>
-						<div class="top-article-details">
+						<div class="top-article-details" id="queries-data">
 							<a href="queries.html">
 								<div class="center">
 									<p>01</p>
-								</div>
-								<div class="query_data">
-									<span class="query_title"><b>Prince Niyonshuti</b></span>
-									<p class="query_tag">i want to know more about...</p>
-								</div>
-							</a>
-							<a href="queries.html">
-								<div class="center">
-									<p>02</p>
-								</div>
-								<div class="query_data">
-									<span class="query_title"><b>Prince Niyonshuti</b></span>
-									<p class="query_tag">i want to know more about...</p>
-								</div>
-							</a>
-							<a href="queries.html">
-								<div class="center">
-									<p>03</p>
-								</div>
-								<div class="query_data">
-									<span class="query_title"><b>Prince Niyonshuti</b></span>
-									<p class="query_tag">i want to know more about...</p>
-								</div>
-							</a>
-							<a href="queries.html">
-								<div class="center">
-									<p>04</p>
-								</div>
-								<div class="query_data">
-									<span class="query_title"><b>Prince Niyonshuti</b></span>
-									<p class="query_tag">i want to know more about...</p>
-								</div>
-							</a>
-							<a href="queries.html">
-								<div class="center">
-									<p>05</p>
-								</div>
-								<div class="query_data">
-									<span class="query_title"><b>Prince Niyonshuti</b></span>
-									<p class="query_tag">i want to know more about...</p>
-								</div>
-							</a>
-							<a href="queries.html">
-								<div class="center">
-									<p>06</p>
 								</div>
 								<div class="query_data">
 									<span class="query_title"><b>Prince Niyonshuti</b></span>
@@ -191,6 +128,8 @@
 				</div>
 			</div>
 		</section>
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<script src="../js/firebase.js"></script>
 		<script src="../js/dashboard.js"></script>
 		<script src="../js/authAdmin.js"></script>
 	</body>
