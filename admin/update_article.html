@@ -105,7 +105,7 @@
                         </div>
                         <div class="">
                             <section class="comment-form">
-                                <form onsubmit="return false;">
+                                <form onsubmit="return false;" enctype="multipart/form-data">
                                     <div class="form-row">
                                         <img src="../images/prof.png" id="blah" alt="Blog Cover" width="330px"
                                             height="290px">
@@ -139,13 +139,11 @@
             </div>
         </section>
         
-        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-storage.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="../js/firebase.js"></script>
+        <script src="../js/dashboard.js"></script>
         <script src="../js/updateArticle.js"></script>
+        <script src="../js/authAdmin.js"></script>
         <script>
             function readURL(input) {
                 if (input.files && input.files[0]) {

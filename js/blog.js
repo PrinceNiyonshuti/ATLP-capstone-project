@@ -17,7 +17,7 @@ const getBlogs = async () => {
 							<img src=${res?.cover} alt="" style="height:245px" />
 							<div class="panel">
 								<h3>${res?.title}</h3>
-								<span class="date">${res?.createdAt.toString()}</span>
+								<span class="date">${new Date(res.createdAt).toDateString()}</span>
 								<p>
 									${res?.content.substring(0, 155)}...
 								</p>
@@ -39,4 +39,4 @@ getBlogs();
 setTimeout(function () {
 	document.getElementById("myDiv").style.display = "none";
 	document.getElementById("blogs-data").style.display = "flex";
-}, 3500);
+}, 500);

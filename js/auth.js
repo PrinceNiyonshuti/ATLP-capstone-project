@@ -68,7 +68,7 @@ async function loginUser() {
 				if (response.data.role == "admin") {
 					window.location.href = "../admin/dashboard.html";
 				} else {
-					window.location.href = "../user/userDashboard.html";
+					window.location.href = "../user/dashboard.html";
 				}
 			});
 		} else {
@@ -162,3 +162,24 @@ async function subNewsletter() {
 		}
 	}
 }
+
+
+// Check auth
+function checkAuthentication() {
+	let user = localStorage.getItem("user");
+	if (user) {
+		user = JSON.parse(user);
+		const role = user.role;
+		const admin = "admin";
+		if (role === admin) {
+			window.location.href = "../admin/dashboard.html";
+		} else if (role != admin) {
+			window.location.href = "../user/dashboard.html";
+		} else {
+			window.location.href = "../login.html";
+		}
+	} else {
+		console.log("User");
+	}
+}
+checkAuthentication();

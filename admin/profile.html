@@ -94,11 +94,11 @@
                     <div class="recent-article box" style="width:100%">
                         <div class="title">My Profile</div>
                         <div>
-                            <p><b>Username </b> : Andela</p>
-                            <p><b>Email </b> : andela@gmail.com</p>
+                            <p><b>Username </b> : <label id="user-username">user</label></p>
+                            <p><b>Email </b> : <label id="user-mail">user@gmail.com</label></p>
                         </div>
                         <div class="profile-details">
-                            <img src="../../images/prof.png" alt="" style="height:20rem" />
+                            <img src="../../images/prof.png" id="user-image" alt="" style="height:20rem" />
                         </div>
                         <div class="">
                             <div class="button" style="justify-content: left;">
@@ -109,7 +109,11 @@
                 </div>
             </div>
         </section>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="../js/firebase.js"></script>
         <script src="../js/dashboard.js"></script>
+        <script src="../js/authAdmin.js"></script>
+        <script src="../js/profile.js"></script>
     </body>
 
 </html>

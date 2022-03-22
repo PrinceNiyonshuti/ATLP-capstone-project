@@ -1,33 +1,12 @@
 /** @format */
 
-const DataId = location.search.substring(1);
-
-const getArticle = async () => {
-	let result = [];
-	fetch(api + "articles/" + DataId, {
-		method: "GET",
-	})
-		.then((response) => response.json())
-		.then((json) => {
-			result = json.data;
-			document.getElementById("DataID").value = result._id;
-			document.getElementById("title").value = result.title;
-			document.getElementById("author").value = result.author;
-			document.getElementById("slug").value = result.slug;
-			document.getElementById("description").value = result.content;
-			document.getElementById("blah").src = result.cover;
-		})
-		.catch((err) => console.log(err));
-};
-getArticle();
-
-async function updateArticle() {
-	const docId = document.getElementById("DataID").value;
+async function saveArticle() {
 	const title = document.getElementById("title").value;
 	const author = document.getElementById("author").value;
 	const slug = document.getElementById("slug").value;
 	const description = document.getElementById("description").value;
 	const file = document.querySelector("#cover").files[0];
+
 	if (title == "") {
 		swal("Error", "Please fill in the title", "error");
 	} else if (author == "") {
@@ -38,8 +17,8 @@ async function updateArticle() {
 		swal("Error", "Please fill in the description", "error");
 	} else {
 		try {
-			const updateArticleData = await fetch(api + "articles/" + docId, {
-				method: "PUT",
+			const newArticleData = await fetch(api + "articles", {
+				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
 					authorization: token,
@@ -52,11 +31,11 @@ async function updateArticle() {
 					content: description,
 				}),
 			});
-			response = await updateArticleData.json();
+			response = await newArticleData.json();
 			console.log(file);
-			if (response.success && response.message) {
+			if (response.success && response.data) {
 				swal({
-					title: "Article Updated",
+					title: "Article Created",
 					icon: "success",
 					timer: 2000,
 				}).then(() => {
