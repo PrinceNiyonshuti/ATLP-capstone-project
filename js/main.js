@@ -22,12 +22,12 @@ function linkAction() {
 navLink.forEach((n) => n.addEventListener("click", linkAction));
 
 // check if authenticated
-async function getProfile() {
+async function getAuthData() {
 	let user = localStorage.getItem("user");
 	user
 		? (document.getElementById("auth-data").innerHTML =
-				"<a href='login.html' class='nav_link'><i class='uil uil-message nav_icon'></i> Dashboard</a>",)
+				"<a href='login.html' class='nav_link'><i class='uil uil-message nav_icon'></i> Dashboard</a>")
 		: (document.getElementById("auth-data").innerHTML =
 				"<a href='login.html' class='nav_link'><i class='uil uil-message nav_icon'></i> login</a>");
 }
-getProfile();
+getAuthData();
