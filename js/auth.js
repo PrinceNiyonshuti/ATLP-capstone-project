@@ -176,7 +176,7 @@ function checkAuthentication() {
 		} else if (role != admin) {
 			window.location.href = "../user/dashboard.html";
 		} else {
-			window.location.href = "../login.html";
+			
 		}
 	} else {
 		console.log("User");

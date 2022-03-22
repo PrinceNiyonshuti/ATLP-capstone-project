@@ -57,10 +57,12 @@ function delQuery(DataId) {
 		title: "Attention",
 		text: "Are you sure!! You want to Delete This Query",
 		icon: "warning",
-		buttons: true,
-		dangerMode: true,
-	}).then(() => {
-		willDelete(DataId);
+	}).then((value) => {
+		if (value) {
+			willDelete(DataId);
+		} else {
+			swal("Canceled Deleting Query Action");
+		}
 	});
 }
 
@@ -74,7 +76,7 @@ async function willDelete(DataId) {
 			},
 		});
 		response = await deleteArticleData.json();
-		if (response.success && response.message) {
+		if (response.status && response.message) {
 			swal({
 				title: "You have Delete Query",
 				icon: "success",

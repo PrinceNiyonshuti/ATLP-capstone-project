@@ -31,7 +31,7 @@ const getSubscribers = async () => {
 									<div class="button" style="justify-content: center;">
 										<button class="del-btn" id="${
 											res?._id
-										}" onclick="delUser(this.id)" style="margin:4px;">Deactivate</button>
+										}" onclick="unSubscriber(this.id)" style="margin:4px;">Deactivate</button>
 									</div>
 								</td>
 							</tr>
@@ -45,3 +45,13 @@ const getSubscribers = async () => {
 		.catch((err) => console.log(err));
 };
 getSubscribers();
+
+function unSubscriber() {
+	swal("Are you sure you want to delete this Subscriber ?").then((value) => {
+		if (value) {
+			swal("Subscriber Deleted");
+		} else {
+			swal("Canceled Deleting Subscriber");
+		}
+	});
+}

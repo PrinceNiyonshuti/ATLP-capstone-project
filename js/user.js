@@ -49,3 +49,13 @@ const getUsers = async () => {
 		.catch((err) => console.log(err));
 };
 getUsers();
+
+function delUser() {
+	swal("Are you sure you want to delete this user ?").then((value) => {
+		if (value) {
+			swal("User Deleted");
+		} else {
+			swal("Canceled Deleting User Action");
+		}
+	});
+}
