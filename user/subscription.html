@@ -27,15 +27,9 @@
             </div>
             <ul class="nav-links">
                 <li>
-                    <a href="userDashboard.html">
+                    <a href="dashboard.html">
                         <i class="bx bx-grid-alt"></i>
                         <span class="links_name">Dashboard</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="articles.html">
-                        <i class="bx bx-box"></i>
-                        <span class="links_name">Recent Articles</span>
                     </a>
                 </li>
                 <li>
@@ -57,10 +51,11 @@
                     </a>
                 </li>
                 <li class="log_out">
-                    <a href="">
+                    <button class="del-btn" onclick="logOut()"
+                        style="height: 100%;width: 100%;display: flex;align-items: center;text-decoration: none;transition: all 0.4s ease;background: #081d45;">
                         <i class="bx bx-log-out"></i>
-                        <span class="links_name" onclick="logOut()">Log out</span>
-                    </a>
+                        <span class="links_name">Log out</span>
+                    </button>
                 </li>
             </ul>
         </div>
@@ -92,8 +87,8 @@
                             <p style="justify-content: left;">
                                 Currently subscribed to receive notification from Prince Dev newsletter
                             </p>
-                            <div class="button" style="justify-content: left;">
-                                <a href="read_more.html">Un Subscribe</a>
+                            <div id="subscriber-data">
+                                
                             </div>
                         </div>
                     </div>
@@ -102,7 +97,8 @@
         </section>
         <script src="../js/firebase.js"></script>
         <script src="../js/authCheck.js"></script>
-        <script src="../js/dashboard.js"></script>
+        <script src="../js/userSubscription.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </body>
 
 </html>

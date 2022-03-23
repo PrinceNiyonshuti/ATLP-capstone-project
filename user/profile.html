@@ -27,15 +27,9 @@
             </div>
             <ul class="nav-links">
                 <li>
-                    <a href="userDashboard.html">
+                    <a href="dashboard.html">
                         <i class="bx bx-grid-alt"></i>
                         <span class="links_name">Dashboard</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="articles.html">
-                        <i class="bx bx-box"></i>
-                        <span class="links_name">Recent Articles</span>
                     </a>
                 </li>
                 <li>
@@ -57,10 +51,11 @@
                     </a>
                 </li>
                 <li class="log_out">
-                    <a href="">
+                    <button class="del-btn" onclick="logOut()"
+                        style="height: 100%;width: 100%;display: flex;align-items: center;text-decoration: none;transition: all 0.4s ease;background: #081d45;">
                         <i class="bx bx-log-out"></i>
-                        <span class="links_name" onclick="logOut()">Log out</span>
-                    </a>
+                        <span class="links_name">Log out</span>
+                    </button>
                 </li>
             </ul>
         </div>
@@ -89,7 +84,7 @@
                         <div class="title">My Profile</div>
                         <div>
                             <p><b>Username </b> : <label id="user-data">user</label></p>
-                            <p><b>Email </b> : andela@gmail.com</p>
+                            <p><b>Email </b> : <label id="user-email">user</label></p>
                         </div>
                         <div class="profile-details">
                             <img src="../../images/prof.png" alt="" style="height:20rem"/>
@@ -105,7 +100,7 @@
         </section>
         <script src="../js/firebase.js"></script>
         <script src="../js/authCheck.js"></script>
-        <script src="../js/dashboard.js"></script>
+        <script src="../js/userProfile.js"></script>
     </body>
 
 </html>

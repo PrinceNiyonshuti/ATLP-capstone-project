@@ -66,13 +66,13 @@ const getDashQueries = async () => {
 				? (document.querySelector("#queries-data").innerHTML = result
 						.map(
 							(res) => `
-							<a href="queries.html">
+							<a href="viewQuery.html?${res?._id}">
 								<div class="center">
 									<p>${(counter += 1)}</p>
 								</div>
 								<div class="query_data">
 									<span class="query_title"><b>${res?.name}</b></span>
-									<p class="query_tag">i want to know more about...</p>
+									<p class="query_tag">${res?.content.substring(0, 25)}...</p>
 								</div>
 							</a>
 						`

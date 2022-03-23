@@ -47,11 +47,11 @@ const getSubscribers = async () => {
 getSubscribers();
 
 function unSubscriber() {
-	swal("Are you sure you want to delete this Subscriber ?").then((value) => {
+	swal("Are you sure you want to Deactivate this Subscriber ?").then((value) => {
 		if (value) {
-			swal("Subscriber Deleted");
+			swal("Subscriber Deactivated");
 		} else {
-			swal("Canceled Deleting Subscriber");
+			swal("Canceled Deactivating Subscriber");
 		}
 	});
 }

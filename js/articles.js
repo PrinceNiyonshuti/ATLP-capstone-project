@@ -72,7 +72,9 @@ const getBlogs = async () => {
 							<tr>
 								<td><img src=${res?.cover} width="70px" alt="${res?.title}" /></td>
 								<td>
-									<a href="" style="text-decoration:none;color:black;">
+									<a href="../readmore.html?${
+										res?._id
+									}" style="text-decoration:none;color:black;">
 										<h4>${res?.title.substring(0, 50)} ...</h4>
 									</a>
 								</td>
