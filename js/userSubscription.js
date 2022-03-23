@@ -20,13 +20,12 @@ async function getAuthData() {
 }
 getAuthData();
 
-
 // Unsubscribe
 async function unSubscribe() {
 	const email = userMail;
 	try {
-		const subscribeToNewsletter = await fetch(api + "subscribers", {
-			method: "DELETE",
+		const subscribeToNewsletter = await fetch(api + "subscribers/remove", {
+			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
 				authorization: token,
@@ -36,7 +35,8 @@ async function unSubscribe() {
 			}),
 		});
 		response = await subscribeToNewsletter.json();
-		if (subscribeToNewsletter.status == 201 && response.data) {
+		console.log(response);
+		if (response.success && response.message) {
 			swal({
 				title: "Un Subscribed from our Newsletter",
 				icon: "success",
@@ -46,10 +46,9 @@ async function unSubscribe() {
 			swal("Error", response.message, "error");
 		}
 	} catch (error) {
-		swal("Error", response.message, "error");
+		swal("Error", error.message, "error");
 	}
 }
-
 
 // log out
 function logOut() {
