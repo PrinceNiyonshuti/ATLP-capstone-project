@@ -10,14 +10,14 @@ function checkAuthUser() {
 		const role = user.role;
 		const standardUser = "standard-user";
 		if (role === standardUser) {
-			console.log("User");
+			// do nothing 
 		} else if (role != standardUser) {
 			window.location.href = "../admin/dashboard.html";
 		} else {
 			window.location.href = "../login.html";
 		}
 	} else {
-		console.log("User");
+	
 	}
 }
 checkAuthUser();

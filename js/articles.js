@@ -51,7 +51,7 @@ async function updateArticle() {
 				swal("Error", response.message, "error");
 			}
 		} catch (error) {
-			swal("Error", response.message, "error");
+			swal("Error", error.message, "error");
 		}
 	}
 }
@@ -96,7 +96,7 @@ const getBlogs = async () => {
 						.join(""))
 				: (document.querySelector(
 						"#articles-data"
-				  ).innerHTML = `<h1>Sorry , Not Article yet published</h1>`);
+				  ).innerHTML = `<tr><td style='text-align:center' colspan='4'><h2>Sorry , Not Article yet published</h2></td></tr>`);
 		})
 		.catch((err) => console.log(err));
 };

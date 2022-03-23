@@ -66,7 +66,7 @@ async function updateArticle() {
 				swal("Error", response.message, "error");
 			}
 		} catch (error) {
-			swal("Error", response.message, "error");
+			swal("Error", error.message, "error");
 		}
 	}
 }

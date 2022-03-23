@@ -44,7 +44,7 @@ const getUsers = async () => {
 						.join(""))
 				: (document.querySelector(
 						"#users-data"
-				  ).innerHTML = `<h1>Sorry , No User Available</h1>`);
+				  ).innerHTML = `<tr><td style='text-align:center' colspan='4'><h2>Sorry , No Users Available</h2></td></tr>`);
 		})
 		.catch((err) => console.log(err));
 };

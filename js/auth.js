@@ -32,14 +32,14 @@ async function addUser() {
 				if (response.data.role == "admin") {
 					window.location.href = "../admin/dashboard.html";
 				} else {
-					window.location.href = "../user/userDashboard.html";
+					window.location.href = "../user/dashboard.html";
 				}
 			});
 		} else {
 			swal("Error", response.message, "error");
 		}
 	} catch (error) {
-		swal("Error", response.message, "error");
+		swal("Error", error.message, "error");
 	}
 }
 
@@ -61,7 +61,7 @@ async function loginUser() {
 			}),
 		});
 		response = await SignIn.json();
-		if (SignIn.status == 200 && response.data) {
+		if (response.status && response.data) {
 			swal("Success", response.message, "success").then(() => {
 				localStorage.setItem("token", "Bearer " + response.token);
 				localStorage.setItem("user", JSON.stringify(response.data));
@@ -75,10 +75,9 @@ async function loginUser() {
 			swal("Error", response.message, "error");
 		}
 	} catch (error) {
-		swal("Error", response.message, "error");
+		swal("Error", error.message, "error");
 	}
 }
-
 
 // Check auth
 function checkAuthentication() {
@@ -92,7 +91,6 @@ function checkAuthentication() {
 		} else if (role != admin) {
 			window.location.href = "../user/dashboard.html";
 		} else {
-			
 		}
 	} else {
 		console.log("User");

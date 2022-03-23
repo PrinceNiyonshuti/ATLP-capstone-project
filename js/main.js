@@ -75,7 +75,7 @@ async function sendQuery() {
 				email.value = "";
 			}
 		} catch (error) {
-			swal("Error", response.message, "error");
+			swal("Error", error.message, "error");
 		}
 	}
 }
@@ -111,7 +111,7 @@ async function subNewsletter() {
 				email.value = "";
 			}
 		} catch (error) {
-			swal("Error", response.message, "error");
+			swal("Error", error.message, "error");
 		}
 	}
 }
