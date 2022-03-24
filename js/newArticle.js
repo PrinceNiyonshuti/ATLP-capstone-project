@@ -18,20 +18,19 @@ async function saveArticle() {
 		swal("Error", "Please fill in the description", "error");
 	} else {
 		try {
+			const formData = new FormData();
+			formData.append('image', file);
+			formData.append('title', title);
+			formData.append("slug", slug);
+			formData.append("author", author);
+			formData.append('content', description);
 
 			const newArticleData = await fetch(api + "articles", {
 				method: "POST",
 				headers: {
-					"Content-Type": "application/json",
 					authorization: token,
 				},
-				body: JSON.stringify({
-					image: file,
-					title: title,
-					slug: slug,
-					author: author,
-					content: description,
-				}),
+				body:formData
 			});
 			response = await newArticleData.json();
 			console.log(file);
