@@ -42,7 +42,9 @@ const getComments = async () => {
 								<div class="comment">
 									<div class="comment-info">
 										<div class="article-text">
-											<h4 class="comment-name">${res?.owner} - <span class="comment-time">${new Date(
+											<h4 class="comment-name">${
+												res?.owner["username"]
+											} - <span class="comment-time">${new Date(
 								res.createdAt
 							).toDateString()}</span></h4>
 											<p>

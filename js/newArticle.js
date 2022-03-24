@@ -6,6 +6,7 @@ async function saveArticle() {
 	const slug = document.getElementById("slug").value;
 	const description = document.getElementById("description").value;
 	const file = document.querySelector("#cover").files[0];
+	// const file = document.getElementById("cover").value;
 
 	if (title == "") {
 		swal("Error", "Please fill in the title", "error");
@@ -17,6 +18,7 @@ async function saveArticle() {
 		swal("Error", "Please fill in the description", "error");
 	} else {
 		try {
+
 			const newArticleData = await fetch(api + "articles", {
 				method: "POST",
 				headers: {
@@ -45,7 +47,7 @@ async function saveArticle() {
 				swal("Error", response.message, "error");
 			}
 		} catch (error) {
-			swal("Error", response.message, "error");
+			swal("Error", error.message, "error");
 		}
 	}
 }

@@ -44,8 +44,18 @@ const getUsers = async () => {
 						.join(""))
 				: (document.querySelector(
 						"#users-data"
-				  ).innerHTML = `<h1>Sorry , No User Available</h1>`);
+				  ).innerHTML = `<tr><td style='text-align:center' colspan='4'><h2>Sorry , No Users Available</h2></td></tr>`);
 		})
 		.catch((err) => console.log(err));
 };
 getUsers();
+
+function delUser() {
+	swal("Are you sure you want to delete this user ?").then((value) => {
+		if (value) {
+			swal("User Deleted");
+		} else {
+			swal("Canceled Deleting User Action");
+		}
+	});
+}

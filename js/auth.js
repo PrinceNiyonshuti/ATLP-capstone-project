@@ -32,14 +32,14 @@ async function addUser() {
 				if (response.data.role == "admin") {
 					window.location.href = "../admin/dashboard.html";
 				} else {
-					window.location.href = "../user/userDashboard.html";
+					window.location.href = "../user/dashboard.html";
 				}
 			});
 		} else {
 			swal("Error", response.message, "error");
 		}
 	} catch (error) {
-		swal("Error", response.message, "error");
+		swal("Error", error.message, "error");
 	}
 }
 
@@ -61,7 +61,7 @@ async function loginUser() {
 			}),
 		});
 		response = await SignIn.json();
-		if (SignIn.status == 200 && response.data) {
+		if (response.status && response.data) {
 			swal("Success", response.message, "success").then(() => {
 				localStorage.setItem("token", "Bearer " + response.token);
 				localStorage.setItem("user", JSON.stringify(response.data));
@@ -75,94 +75,9 @@ async function loginUser() {
 			swal("Error", response.message, "error");
 		}
 	} catch (error) {
-		swal("Error", response.message, "error");
+		swal("Error", error.message, "error");
 	}
 }
-
-/*
- @role send query 
-*/
-
-async function sendQuery() {
-	const name = document.getElementById("name").value;
-	const email = document.getElementById("email").value;
-	const subject = document.getElementById("subject").value;
-	const content = document.getElementById("content").value;
-	if (name == "") {
-		swal("Error", "Please fill in the name", "error");
-	} else if (email == "") {
-		swal("Error", "Please fill in the email", "error");
-	} else if (subject == "") {
-		swal("Error", "Please fill in the subject", "error");
-	} else if (content == "") {
-		swal("Error", "Please fill in the content", "error");
-	} else {
-		try {
-			const subscribeToNewsletter = await fetch(api + "queries", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({
-					name: name,
-					email: email,
-					subject: subject,
-					content: content,
-				}),
-			});
-			response = await subscribeToNewsletter.json();
-			if (subscribeToNewsletter.status == 201 && response.data) {
-				swal({
-					title: "Query sent successfully",
-					icon: "success",
-					timer: 2000,
-				});
-			} else {
-				swal("Error", response.message, "error");
-				email.value = "";
-			}
-		} catch (error) {
-			swal("Error", response.message, "error");
-		}
-	}
-}
-
-/*
- @role subscribe to newsletter
-*/
-
-async function subNewsletter() {
-	const email = document.getElementById("subEmail").value;
-	if (email == "") {
-		swal("Error", "Please fill in the email", "error");
-	} else {
-		try {
-			const subscribeToNewsletter = await fetch(api + "subscribers", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({
-					email: email,
-				}),
-			});
-			response = await subscribeToNewsletter.json();
-			if (subscribeToNewsletter.status == 201 && response.data) {
-				swal({
-					title: "Subscribed to Newsletter",
-					icon: "success",
-					timer: 2000,
-				});
-			} else {
-				swal("Error", response.message, "error");
-				email.value = "";
-			}
-		} catch (error) {
-			swal("Error", response.message, "error");
-		}
-	}
-}
-
 
 // Check auth
 function checkAuthentication() {
@@ -176,7 +91,6 @@ function checkAuthentication() {
 		} else if (role != admin) {
 			window.location.href = "../user/dashboard.html";
 		} else {
-			window.location.href = "../login.html";
 		}
 	} else {
 		console.log("User");

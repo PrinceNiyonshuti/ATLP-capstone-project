@@ -45,7 +45,7 @@ const getQueries = async () => {
 						.join(""))
 				: (document.querySelector(
 						"#queries-data"
-				  ).innerHTML = `<h1>Sorry , Not Queries yet published</h1>`);
+				  ).innerHTML = `<tr><td style='text-align:center' colspan='3'><h1>Sorry , No Queries Yet Sent</h1></td></tr>`);
 		})
 		.catch((err) => console.log(err));
 };
@@ -57,10 +57,12 @@ function delQuery(DataId) {
 		title: "Attention",
 		text: "Are you sure!! You want to Delete This Query",
 		icon: "warning",
-		buttons: true,
-		dangerMode: true,
-	}).then(() => {
-		willDelete(DataId);
+	}).then((value) => {
+		if (value) {
+			willDelete(DataId);
+		} else {
+			swal("Canceled Deleting Query Action");
+		}
 	});
 }
 
@@ -74,7 +76,7 @@ async function willDelete(DataId) {
 			},
 		});
 		response = await deleteArticleData.json();
-		if (response.success && response.message) {
+		if (response.status && response.message) {
 			swal({
 				title: "You have Delete Query",
 				icon: "success",
@@ -86,6 +88,6 @@ async function willDelete(DataId) {
 			swal("Error", response.message, "error");
 		}
 	} catch (error) {
-		swal("Error", response.message, "error");
+		swal("Error", error.message, "error");
 	}
 }

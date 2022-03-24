@@ -389,6 +389,18 @@ nav .profile-details i {
 	font-weight: 400;
 	color: #333;
 }
+.sub-btn{
+	color: #fff;
+	background: var(--first-color);
+	padding: 4px 12px;
+	font-size: 15px;
+	font-weight: 400;
+	border-radius: 4px;
+	text-decoration: none;
+	transition: all 0.3s ease;
+	cursor: pointer;
+	border: none;
+}
 
 .del-btn {
 	background-color: #f10606;

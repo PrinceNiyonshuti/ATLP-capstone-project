@@ -51,7 +51,7 @@ async function updateArticle() {
 				swal("Error", response.message, "error");
 			}
 		} catch (error) {
-			swal("Error", response.message, "error");
+			swal("Error", error.message, "error");
 		}
 	}
 }
@@ -72,19 +72,23 @@ const getBlogs = async () => {
 							<tr>
 								<td><img src=${res?.cover} width="70px" alt="${res?.title}" /></td>
 								<td>
-									<a href="" style="text-decoration:none;color:black">
-										<h4>${res?.title.substring(0, 15)} ...</h4>
+									<a href="../readmore.html?${
+										res?._id
+									}" style="text-decoration:none;color:black;">
+										<h4>${res?.title.substring(0, 50)} ...</h4>
 									</a>
 								</td>
 								<td>${res?.slug}</td>
 								<td>
-									<div class="button" style="justify-content: center;"><a href="update_article.html?${
-										res?._id
-									}" class="del-btn" style="background-color:#1400e3;">Edit</a>
-									&nbsp;
-									<button class="del-btn" id="${
-										res?._id
-									}" onclick="delArticle(this.id)">Delete</button></div>
+									<div class="button" style="justify-content: center;">
+										<a href="update_article.html?${
+											res?._id
+										}" class="del-btn" style="background-color:#1400e3;">Edit</a>
+										&nbsp;
+										<button class="del-btn" id="${
+											res?._id
+										}" onclick="delArticle(this.id)">Delete</button>
+									</div>
 								</td>
 							</tr>
 						`
@@ -92,7 +96,7 @@ const getBlogs = async () => {
 						.join(""))
 				: (document.querySelector(
 						"#articles-data"
-				  ).innerHTML = `<h1>Sorry , Not Article yet published</h1>`);
+				  ).innerHTML = `<tr><td style='text-align:center' colspan='4'><h2>Sorry , Not Article yet published</h2></td></tr>`);
 		})
 		.catch((err) => console.log(err));
 };
@@ -102,12 +106,14 @@ getBlogs();
 function delArticle(DataId) {
 	swal({
 		title: "Attention",
-		text: "Are you sure!! You want to Delete",
+		text: "Are you sure!! You want to Delete The Article",
 		icon: "warning",
-		buttons: true,
-		dangerMode: true,
-	}).then(() => {
-		willDelete(DataId);
+	}).then((value) => {
+		if (value) {
+			willDelete(DataId);
+		} else {
+			swal("Alright then ");
+		}
 	});
 }
 
