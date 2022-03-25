@@ -35,6 +35,7 @@ const getComments = async () => {
 		.then((response) => response.json())
 		.then((json) => {
 			result = json.data;
+			console.log(result);
 			result?.length
 				? (document.querySelector("#comment-data").innerHTML = result
 						.map(

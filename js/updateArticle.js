@@ -45,7 +45,7 @@ async function updateArticle() {
 					authorization: token,
 				},
 				body: JSON.stringify({
-					image: file,
+					// image: file,
 					title: title,
 					slug: slug,
 					author: author,
