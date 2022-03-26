@@ -23,3 +23,4 @@ To get started with this project you must have
 - HTML
 - CSS
 - Javascript
+- Sweet Alert 
