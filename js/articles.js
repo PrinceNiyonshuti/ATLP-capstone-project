@@ -142,3 +142,5 @@ async function willDelete(DataId) {
 		swal("Error", response.message, "error");
 	}
 }
+
+

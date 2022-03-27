@@ -1,5 +1,5 @@
 /** @format */
-// get queries collection
+// get sbscribers collection
 const getSubscribers = async () => {
 	let result = [];
 	fetch(api + "subscribers", {

@@ -1,5 +1,5 @@
 /** @format */
-
+let allSubscribers = "";
 async function saveArticle() {
 	const title = document.getElementById("title").value;
 	const author = document.getElementById("author").value;
@@ -44,14 +44,36 @@ async function saveArticle() {
 	}
 }
 
+// get all subscribers emails
+const getSubscribers = async () => {
+	let result = [];
+	fetch(api + "subscribers", {
+		method: "GET",
+		headers: {
+			"Content-Type": "application/json",
+			authorization: token,
+		},
+	})
+		.then((response) => response.json())
+		.then((json) => {
+			result = json.data;
+			var finalArray = result.map(function (obj) {
+				return obj.email;
+			});
+			allSubscribers = finalArray;
+		})
+		.catch((err) => console.log(err));
+};
+getSubscribers();
+
 // notify the subscribers
 function sendEmail(articleId) {
 	Email.send({
 		Host: "smtp.mailtrap.io",
 		Username: "e42c6353918c68",
 		Password: "8e25a0e98955c5",
-		To: "recipient@example.com",
-		From: "sender@example.com",
+		To: allSubscribers,
+		From: "princeDev@test.com",
 		Subject: "New Article Notification",
 		Body:
 			"<html><h2>Article Notification </h2><p>To view or read more about the new article , click here to view the article </p><strong><a href='https://prince-brand.netlify.app/readmore.html?" +
