@@ -8,32 +8,38 @@ const getComments = async () => {
 	})
 		.then((response) => response.json())
 		.then((json) => {
-			result = json.data;
-			console.log(result);
+            result = json.data;
+            var counter = 0;
 			result?.length
 				? (document.querySelector("#comment-data").innerHTML = result
 						.map(
 							(res) => `
-								<div class="comment">
-									<div class="comment-info">
-										<div class="article-text">
-											<h4 class="comment-name">${
-												res?.owner["username"]
-											} - <span class="comment-time">${new Date(
-								res.createdAt
-							).toDateString()}</span></h4>
-											<p>
-												${res?.content}
-											</p>
-										</div>
-									</div>
-								</div>
+                                <tr>
+                                    <td>${(counter += 1)}</td>
+                                    <td>
+                                        <a href="" style="text-decoration:none;color:black">
+                                            <h4>${res?.owner["username"]}</h4>
+                                        </a>
+                                    </td>
+                                    <td  style="padding:0px 10px"><small style="font-weight:bold;">${new Date(
+																			res.createdAt
+																		).toDateString()}</small>
+                                        <p>${res?.content}</p>
+                                    </td>
+                                    <td>
+                                        <div class="button" style="justify-content: center;">
+                                            <button class="del-btn" id="${
+																							res?._id
+																						}" onclick="delQuery(this.id)">Delete</button>
+                                        </div>
+                                    </td>
+                                </tr>
 							`
 						)
 						.join(""))
 				: (document.querySelector(
 						"#comment-data"
-				  ).innerHTML = `<h3>Sorry , Not Comments yet published</h3>`);
+				  ).innerHTML = `<tr><td style='text-align:center' colspan='4'><h1>Sorry , No Comments yet published</h1></td></tr>`);
 		})
 		.catch((err) => console.log(err));
 };
