@@ -35,7 +35,9 @@ const getArticles = async () => {
 								0,
 								15
 							)} ...</a></td>
-									<td>${res?.comments.length} Comments</td>
+									<td>${res?.comments.length} <a href="comments.html?${
+								res?._id
+							}">Comments</a></td>
 								</tr>
 						`
 						)
