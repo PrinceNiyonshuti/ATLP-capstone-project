@@ -8,8 +8,8 @@ const getComments = async () => {
 	})
 		.then((response) => response.json())
 		.then((json) => {
-            result = json.data;
-            var counter = 0;
+			result = json.data;
+			var counter = 0;
 			result?.length
 				? (document.querySelector("#comment-data").innerHTML = result
 						.map(
@@ -30,7 +30,7 @@ const getComments = async () => {
                                         <div class="button" style="justify-content: center;">
                                             <button class="del-btn" id="${
 																							res?._id
-																						}" onclick="delQuery(this.id)">Delete</button>
+																						}" onclick="delComment(this.id)">Delete</button>
                                         </div>
                                     </td>
                                 </tr>
@@ -44,3 +44,18 @@ const getComments = async () => {
 		.catch((err) => console.log(err));
 };
 getComments();
+
+// Delete Query
+function delComment(commentId) {
+	swal({
+		title: "Attention",
+		text: "Are you sure!! You want to Delete This Comment",
+		icon: "warning",
+	}).then((value) => {
+		if (value) {
+			willDelete(commentId);
+		} else {
+			swal("Canceled Deleting Comment Action");
+		}
+	});
+}
