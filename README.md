@@ -6,11 +6,11 @@ generation can not be overemphasized. One having a good online presence means qu
 easy access to opportunities. It gives prospective customers, employer easy to review your work,
 experience, and future ambition. While there are various ways and means to build online brands.
 We believe that having a personal website + blog which one can use to share basic information
-about themself and also share ideas with their network can have a huge impact on one's career.
+about themselves and also share ideas with their network can have a huge impact on one's career.
 ## Getting started
 
 To get started with this project you must have 
-- a browsers
+- a browser
 - Text editor [Vscode,Sublime ,....]
 
 ## Running the app
