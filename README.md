@@ -23,3 +23,16 @@ To get started with this project you must have
 - CSS
 - Javascript
 - Sweet Alert 
+
+## Feedback and issues
+
+Any issue and feedback from the app don't hesitate to make an issue
+
+# Contributors
+
+| [<img src="https://github.com/PrinceNiyonshuti.png" width="100px;"><br><sub><b>Niyonshuti Prince</b></sub>](https://github.com/PrinceNiyonshuti) |
+| :------------------------------------------------------------------------------------------------------------------------ |
+
+## Author
+
+NIYONSHUTI Prince
